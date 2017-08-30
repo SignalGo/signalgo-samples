@@ -48,39 +48,7 @@ namespace SignalGoClientSample
                 stream.Stream.Write(bytesToUpload, 0, bytesToUpload.Length);
                 Console.WriteLine("stream uploaded " + bytesToUpload.Length + " bytes");
             }
-
             Console.ReadLine();
         }
-    }
-
-    [ServiceContract("SignalGoTestClientService")]
-    public class ClientCallback
-    {
-        public ConnectorBase Connector
-        {
-            get
-            {
-                return SignalGo.Client.OperationContract.GetConnector<ConnectorBase>(this);
-            }
-        }
-
-        public string GetMeSignalGo(string value)
-        {
-            Console.WriteLine("called GetMeSignalGo: " + value);
-            return "GetMeSignalGo :" + value;
-        }
-
-        public void HelloSignalGo(string hello)
-        {
-            Console.WriteLine("called HelloSignalGo: " + hello);
-        }
-    }
-
-    [ServiceContract("SignalGoTestService")]
-    public interface ISignalGoServerMethods
-    {
-        bool Login(string userName, string password);
-        StreamInfo DownloadStream(string message);
-        void UploadStream(StreamInfo streamInfo);
     }
 }
