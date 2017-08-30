@@ -39,10 +39,10 @@ namespace SignalGoServerSample
     public class SignalGoServerMethods
     {
         public ISignalGoClientMethods callback = null;
-        OprationContext currentContext = null;
+        OperationContext currentContext = null;
         public SignalGoServerMethods()
         {
-            currentContext = OprationContext.Current;
+            currentContext = OperationContext.Current;
             callback = currentContext.GetClientCallback<ISignalGoClientMethods>();
             Console.Write("client connected: " + currentContext.Client.IPAddress);
         }

@@ -60,7 +60,7 @@ namespace SignalGoClientSample
         {
             get
             {
-                return OprationContract.GetConnector<ConnectorBase>(this);
+                return SignalGo.Client.OperationContract.GetConnector<ConnectorBase>(this);
             }
         }
 
