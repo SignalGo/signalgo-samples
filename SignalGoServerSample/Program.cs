@@ -14,6 +14,7 @@ namespace SignalGoServerSample
                 server.Start("http://localhost:1199/SignalGoTestServicesProject");
                 Console.WriteLine("Server Connected");
 
+                server.AddHttpService(typeof(SimpleHttpRequest));
                 server.InitializeService(typeof(SignalGoServerMethods));
 
                 server.RegisterClientCallbackInterfaceService<ISignalGoClientMethods>();
