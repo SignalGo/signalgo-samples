@@ -10,14 +10,6 @@ namespace SignalGoClientSample
 {
     public class ClientCallback : ISignalGoClientMethods
     {
-        public ConnectorBase Connector
-        {
-            get
-            {
-                return SignalGo.Client.OperationContract.GetConnector<ConnectorBase>(this);
-            }
-        }
-
         public Tuple<string> GetMeSignalGo(string value)
         {
             Console.WriteLine("called GetMeSignalGo: " + value);
