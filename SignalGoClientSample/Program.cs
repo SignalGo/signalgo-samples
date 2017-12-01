@@ -1,6 +1,7 @@
 ﻿using SignalGo.Client;
 using SignalGo.Shared.DataTypes;
 using SignalGo.Shared.Models;
+using SignalGoSharedSample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,29 +26,8 @@ namespace SignalGoClientSample
             var result = service.Login("admin", "admin");
 
             Console.WriteLine("Login Result: " + result);
-
-            //download stream from server
-            using (var streamInfo = service.DownloadStream("hello stream"))
-            {
-                var len = int.Parse(streamInfo.Headers["Size"].ToString());
-                int readLen = 0;
-                while (readLen < len)
-                {
-                    byte[] bytes = new byte[len];
-                    var readCount = streamInfo.Stream.Read(bytes, 0, bytes.Length);
-                    readLen += readCount;
-                    Console.WriteLine("stream downloaded " + readCount + " bytes");
-                }
-            }
-
-            //upload stream to server
-            using (StreamInfo stream = new StreamInfo() { Headers = new Dictionary<string, object>() { { "Size", 10 } } })
-            {
-                service.UploadStream(stream);
-                var bytesToUpload = new byte[] { 1, 2, 3, 4, 5, 10, 6, 7, 8, 9 };
-                stream.Stream.Write(bytesToUpload, 0, bytesToUpload.Length);
-                Console.WriteLine("stream uploaded " + bytesToUpload.Length + " bytes");
-            }
+            
+            
             Console.ReadLine();
         }
     }

@@ -27,8 +27,16 @@ namespace SignalGoServerSample
                 return Content("num is not true!");
             }
             ResponseHeaders.Add("Content-Type", "image/jpeg");
-            return new FileActionResult(@"D:\hamed.jpg");
+            //your file address
+            string fileName = @"D:\ali.jpg";
+            if (!File.Exists(fileName))
+            {
+                Status = System.Net.HttpStatusCode.NotFound;
+                return Content("File not found!");
+            }
+            return new FileActionResult(fileName);
         }
+
         /// <summary>
         /// test url example on your browser:
         /// http://localhost:1199/AddressTest/Hello?name=ali

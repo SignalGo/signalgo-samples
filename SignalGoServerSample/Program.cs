@@ -1,4 +1,5 @@
 ﻿using SignalGo.Server.Settings;
+using SignalGoSharedSample;
 using System;
 
 namespace SignalGoServerSample
@@ -22,7 +23,7 @@ namespace SignalGoServerSample
                 Console.WriteLine("Server Connected");
 
                 server.AddHttpService(typeof(SimpleHttpRequest));
-                server.InitializeService(typeof(SignalGoServerMethods));
+                server.InitializeService<SignalGoServerMethods>();
 
                 server.RegisterClientCallbackInterfaceService<ISignalGoClientMethods>();
 

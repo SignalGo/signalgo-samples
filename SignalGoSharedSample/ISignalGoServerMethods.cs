@@ -5,13 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SignalGoClientSample
+namespace SignalGoSharedSample
 {
     [ServiceContract("SignalGoTestService")]
     public interface ISignalGoServerMethods
     {
-        bool Login(string userName, string password);
-        StreamInfo DownloadStream(string message);
-        void UploadStream(StreamInfo streamInfo);
+        Tuple<bool> Login(string userName, string password);
     }
 }

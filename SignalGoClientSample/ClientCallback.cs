@@ -1,5 +1,6 @@
 ﻿using SignalGo.Client;
 using SignalGo.Shared.DataTypes;
+using SignalGoSharedSample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,7 @@ using System.Text;
 
 namespace SignalGoClientSample
 {
-    [ServiceContract("SignalGoTestClientService")]
-    public class ClientCallback
+    public class ClientCallback : ISignalGoClientMethods
     {
         public ConnectorBase Connector
         {
@@ -18,10 +18,10 @@ namespace SignalGoClientSample
             }
         }
 
-        public string GetMeSignalGo(string value)
+        public Tuple<string> GetMeSignalGo(string value)
         {
             Console.WriteLine("called GetMeSignalGo: " + value);
-            return "GetMeSignalGo :" + value;
+            return new Tuple<string>("GetMeSignalGo :" + value);
         }
 
         public void HelloSignalGo(string hello)
