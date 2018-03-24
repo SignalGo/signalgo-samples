@@ -1,7 +1,6 @@
 ﻿using SignalGo.Server.Models;
 using SignalGo.Shared.DataTypes;
 using SignalGo.Shared.Models;
-using SignalGoSharedSample;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +9,8 @@ using System.Text;
 
 namespace SignalGoServerSample
 {
-    public class SignalGoServerMethods : ISignalGoServerMethods
+    [ServiceContract("SignalGoTestService", ServiceType.ServerService, InstanceType.SingleInstance)]
+    public class SignalGoServerMethods
     {
         public Tuple<bool> Login(string userName, string password)
         {
@@ -18,7 +18,7 @@ namespace SignalGoServerSample
 
             //broadcasting to clients
             //get all clients and call interface methods
-            foreach (var call in SignalGo.Server.Models.OperationContext.Current.GetAllClientCallbackList<ISignalGoClientMethods>())
+            foreach (var call in SignalGo.Server.Models.OperationContext.Current.GetAllClientServices<ISignalGoClientServiceMethods>())
             {
                 //call GetMeSignalGo method
                 var result = call.GetMeSignalGo("test");

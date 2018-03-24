@@ -1,4 +1,5 @@
-﻿using SignalGo.Shared.DataTypes;
+﻿using SignalGo.Server.Models;
+using SignalGo.Shared.DataTypes;
 using SignalGo.Shared.Http;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ using System.Text;
 
 namespace SignalGoServerSample
 {
-    [HttpSupport("AddressTest")]
-    public class SimpleHttpRequest : HttpRequestController
+    [ServiceContract("AddressTest", ServiceType.HttpService, InstanceType.SingleInstance)]
+    public class SimpleHttpRequest
     {
         /// <summary>
         /// test url example on your browser:
@@ -21,18 +22,19 @@ namespace SignalGoServerSample
         /// <returns></returns>
         public ActionResult DownloadImage(string name, int num)
         {
+            var current = OperationContext.Current.HttpClient;
             if (num <= 0)
             {
-                Status = System.Net.HttpStatusCode.Forbidden;
-                return Content("num is not true!");
+                current.Status = System.Net.HttpStatusCode.Forbidden;
+                return "num is not true!";
             }
-            ResponseHeaders.Add("Content-Type", "image/jpeg");
+            current.ResponseHeaders.Add("Content-Type", "image/jpeg");
             //your file address
             string fileName = @"D:\ali.jpg";
             if (!File.Exists(fileName))
             {
-                Status = System.Net.HttpStatusCode.NotFound;
-                return Content("File not found!");
+                current.Status = System.Net.HttpStatusCode.NotFound;
+                return "File not found!";
             }
             return new FileActionResult(fileName);
         }
@@ -44,18 +46,19 @@ namespace SignalGoServerSample
         /// <param name="name"></param>
         /// <param name="num"></param>
         /// <returns></returns>
-        public ActionResult Hello(string name)
+        public string Hello(string name)
         {
-            return Content("hello:" + name);
+            return "hello:" + name;
         }
 
-        public ActionResult TestUploadFile(Guid token, int profileId)
+        public string TestUploadFile(Guid token, int profileId)
         {
-            var fileInfo = TakeNextFile();
+            var current = OperationContext.Current.HttpClient;
+            var fileInfo = current.TakeNextFile();
             if (fileInfo == null)
             {
-                Status = System.Net.HttpStatusCode.NotFound;
-                return Content("file not found!");
+                current.Status = System.Net.HttpStatusCode.NotFound;
+                return "file not found!";
             }
             using (var streamWriter = new FileStream("D:\\testfileName.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
             {
@@ -69,7 +72,7 @@ namespace SignalGoServerSample
                 }
                 long fileLen = streamWriter.Length;
             }
-            return Content("success!");
+            return "success!";
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using SignalGo.Client;
 using SignalGo.Shared.DataTypes;
-using SignalGoSharedSample;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace SignalGoClientSample
 {
-    public class ClientCallback : ISignalGoClientMethods
+    public class ClientCallback : TestClientService.ClientServices.ISignalGoTestClientService
     {
         public Tuple<string> GetMeSignalGo(string value)
         {

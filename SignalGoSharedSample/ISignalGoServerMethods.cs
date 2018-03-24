@@ -7,7 +7,6 @@ using System.Text;
 
 namespace SignalGoSharedSample
 {
-    [ServiceContract("SignalGoTestService", InstanceType.SingleInstance)]
     public interface ISignalGoServerMethods
     {
         Tuple<bool> Login(string userName, string password);

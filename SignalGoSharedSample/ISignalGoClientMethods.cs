@@ -6,10 +6,7 @@ using System.Text;
 
 namespace SignalGoSharedSample
 {
-    [ServiceContract("SignalGoTestClientService")]
     public interface ISignalGoClientMethods
     {
-        void HelloSignalGo(string hello);
-        Tuple<string> GetMeSignalGo(string value);
     }
 }

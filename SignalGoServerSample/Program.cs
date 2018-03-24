@@ -1,5 +1,4 @@
 ﻿using SignalGo.Server.Settings;
-using SignalGoSharedSample;
 using System;
 
 namespace SignalGoServerSample
@@ -10,10 +9,11 @@ namespace SignalGoServerSample
         {
             try
             {
-
+                
                 Console.WriteLine("enable log system...");
-                SignalGo.Shared.Log.MethodCallsLogger.IsEnabled = true;
-
+                SignalGo.Server.Log.ServerMethodCallsLogger logger = new SignalGo.Server.Log.ServerMethodCallsLogger();
+                logger.IsPersianDateLog = true;
+                logger.Initialize();
                 Console.WriteLine("Server Connecting...");
 
 
@@ -22,14 +22,13 @@ namespace SignalGoServerSample
                 server.Start("http://localhost:1199/SignalGoTestServicesProject");
                 Console.WriteLine("Server Connected");
 
-                server.AddHttpService(typeof(SimpleHttpRequest));
-                server.InitializeService<SignalGoServerMethods>();
+                server.RegisterServerService<SimpleHttpRequest>();
+                server.RegisterServerService<SignalGoServerMethods>();
 
-                server.RegisterClientCallbackInterfaceService<ISignalGoClientMethods>();
+                server.RegisterClientService<ISignalGoClientServiceMethods>();
 
                 Console.WriteLine("handle cross origin access...");
                 server.HttpProtocolSetting = new HttpProtocolSetting() { HandleCrossOriginAccess = true };
-
                 Console.WriteLine("Waiting for Client...");
                 Console.ReadLine();
             }
