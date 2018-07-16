@@ -18,7 +18,7 @@ namespace SignalGoServerSample
 
             //broadcasting to clients
             //get all clients and call interface methods
-            foreach (var call in SignalGo.Server.Models.OperationContext.Current.GetAllClientServices<ISignalGoClientServiceMethods>())
+            foreach (var call in SignalGo.Server.Models.OperationContext.Current.GetAllClientServicesButMe<ISignalGoClientServiceMethods>())
             {
                 //call GetMeSignalGo method
                 var result = call.GetMeSignalGo("test");
