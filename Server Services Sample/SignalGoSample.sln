@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalGoClientSample", "SignalGoClientSample\SignalGoClientSample.csproj", "{33F5ACD6-08F4-478D-BB92-57265F97DABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalGoServerSample", "SignalGoServerSample\SignalGoServerSample.csproj", "{9864EA74-7DA0-454F-B5EA-5B7D48B82E52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33F5ACD6-08F4-478D-BB92-57265F97DABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33F5ACD6-08F4-478D-BB92-57265F97DABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33F5ACD6-08F4-478D-BB92-57265F97DABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33F5ACD6-08F4-478D-BB92-57265F97DABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9864EA74-7DA0-454F-B5EA-5B7D48B82E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9864EA74-7DA0-454F-B5EA-5B7D48B82E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9864EA74-7DA0-454F-B5EA-5B7D48B82E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9864EA74-7DA0-454F-B5EA-5B7D48B82E52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59857B7E-AA5C-41E9-8E60-5AFF038BD5F5}
+	EndGlobalSection
+EndGlobal
