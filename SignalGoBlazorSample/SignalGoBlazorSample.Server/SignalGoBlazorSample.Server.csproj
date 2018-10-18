@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.6.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" />
+    <PackageReference Include="SignalGo.Net.Server" Version="4.3.1" />
+    <PackageReference Include="SignalGo.Server.Owin" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SignalGoBlazorSample.Client\SignalGoBlazorSample.Client.csproj" />
+    <ProjectReference Include="..\SignalGoBlazorSample.Shared\SignalGoBlazorSample.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

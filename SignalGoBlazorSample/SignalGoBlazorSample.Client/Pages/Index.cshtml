@@ -1,0 +1,49 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor with SignalGo working for you?" />
+<h1>for see result open see console window</h1>
+<button class="btn btn-primary" onclick="@Hello">Hello Method Call</button>
+<button class="btn btn-primary" onclick="@GetUsers">Get Complex Objects</button>
+
+@functions {
+
+    async void Hello()
+    {
+        try
+        {
+            var service = new BlazorSignalGoTest.HttpServices.HelloWorldService("http://localhost:14568");
+            var result = await service.LoginAsync("Ali");
+            Console.WriteLine("result LoginAsync sucess:");
+            Console.WriteLine(result);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("cannot call server method are you sure server is start with http://localhost:14568 url?");
+        }
+    }
+    async void GetUsers()
+    {
+        try
+        {
+            var service = new BlazorSignalGoTest.HttpServices.HelloWorldService("http://localhost:14568");
+            var result = await service.GetUserInfoesAsync();
+            Console.WriteLine("result GetUserInfoesAsync sucess:");
+            foreach (var user in result)
+            {
+                Console.WriteLine($"user {user.Id} name: {user.Name} age: {user.Age}");
+                foreach (var book in user.Books)
+                {
+                    Console.WriteLine($"user {book.UserInfo.Id} book: {book.Details}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("cannot call server method are you sure server is start with http://localhost:14568 url?");
+        }
+    }
+}
