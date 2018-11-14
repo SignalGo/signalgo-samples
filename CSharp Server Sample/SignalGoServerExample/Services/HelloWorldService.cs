@@ -5,6 +5,7 @@ using System.Collections.Generic;
 namespace SignalGoServerExample.Services
 {
     [ServiceContract("HelloWorld", ServiceType.HttpService, InstanceType.SingleInstance)]
+    [ServiceContract("HelloWorld", ServiceType.ServerService, InstanceType.SingleInstance)]
     public class HelloWorldService
     {
         /// <summary>
