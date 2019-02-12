@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SignalGoBlazorSample.Server.Models
+namespace SignalGoBlazorSample.Shared.Models
 {
     public class BookInfo
     {

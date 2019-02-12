@@ -14,7 +14,7 @@ namespace CSharpClientSample
             try
             {
                 ClientProvider clientProvider = new ClientProvider();
-                clientProvider.Connect("http://localhost:6428/SignalGo");
+                clientProvider.Connect("http://localhost:9674/SignalGo");
                 var service = clientProvider.RegisterServerService<MyTestServices.ServerServices.HelloWorldService>(clientProvider);
                 var loginResult = service.Login("ali yousefi");
                 Console.WriteLine("login called:");

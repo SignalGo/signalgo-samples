@@ -1,5 +1,5 @@
 ﻿using SignalGo.Shared.DataTypes;
-using SignalGoBlazorSample.Server.Models;
+using SignalGoBlazorSample.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

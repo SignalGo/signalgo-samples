@@ -6,8 +6,8 @@ Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor with SignalGo working for you?" />
 <h1>for see result open see console window</h1>
-<button class="btn btn-primary" onclick="@Hello">Hello Method Call</button>
-<button class="btn btn-primary" onclick="@GetUsers">Get Complex Objects</button>
+<button class="btn btn-primary" onclick="@Hello">Hello Method Call (See browser log for result)</button>
+<button class="btn btn-primary" onclick="@GetUsers">Get Complex Objects (See browser log for result)</button>
 
 @functions {
 
@@ -19,9 +19,11 @@ Welcome to your new app.
             var result = await service.LoginAsync("Ali");
             Console.WriteLine("result LoginAsync sucess:");
             Console.WriteLine(result);
+            
         }
         catch (Exception ex)
         {
+            Console.WriteLine(ex.ToString());
             Console.WriteLine("cannot call server method are you sure server is start with http://localhost:14568 url?");
         }
     }
@@ -43,6 +45,7 @@ Welcome to your new app.
         }
         catch (Exception ex)
         {
+            Console.WriteLine(ex.ToString());
             Console.WriteLine("cannot call server method are you sure server is start with http://localhost:14568 url?");
         }
     }

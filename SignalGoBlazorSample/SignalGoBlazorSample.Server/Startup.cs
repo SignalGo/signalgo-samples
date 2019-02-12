@@ -34,7 +34,7 @@ namespace SignalGoBlazorSample.Server
             serverProvider.RegisterServerService<SignalGoServices.HelloWorldService>();
             //to handle cross origin errors
             serverProvider.ProviderSetting.HttpSetting.HandleCrossOriginAccess = true;
-
+            serverProvider.AddAssemblyToSkipServiceReferences(typeof(Shared.Models.UserInfo).Assembly);
             app.UseResponseCompression();
 
             if (env.IsDevelopment())
@@ -46,7 +46,7 @@ namespace SignalGoBlazorSample.Server
             {
                 routes.MapRoute(name: "default", template: "{controller}/{action}/{id?}");
             });
-            app.UseMiddleware<SignalGo.Server.Owin.SignalGoHttpMiddleware>(serverProvider);
+            app.UseMiddleware<SignalGo.Server.Owin.SignalGoNetCoreMiddleware>(serverProvider);
             app.UseBlazor<Client.Startup>();
         }
     }
