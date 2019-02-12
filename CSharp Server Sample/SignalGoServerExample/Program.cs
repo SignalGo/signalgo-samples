@@ -9,9 +9,10 @@ namespace SignalGoServerExample
         {
             ServerProvider serverProvider = new ServerProvider();
             serverProvider.RegisterServerService<Services.HelloWorldService>();
+            serverProvider.RegisterClientService<ClientServices.IHelloCallbackClientService>();
             //to handle cross origin errors
             serverProvider.ProviderSetting.HttpSetting.HandleCrossOriginAccess = true;
-            serverProvider.Start("http://localhost:6428/SignalGo");
+            serverProvider.Start("http://localhost:9674/SignalGo");
             Console.WriteLine("server started");
             Console.ReadKey();
         }

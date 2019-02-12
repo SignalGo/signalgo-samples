@@ -1,6 +1,10 @@
-﻿using SignalGo.Shared.DataTypes;
+﻿using SignalGo.Server.Models;
+using SignalGo.Shared.DataTypes;
+using SignalGoServerExample.ClientServices;
 using SignalGoServerExample.Models;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SignalGoServerExample.Services
 {
@@ -68,6 +72,21 @@ namespace SignalGoServerExample.Services
                 },
             };
             return new List<UserInfo>() { user1, user2 };
+        }
+
+        public string Hello()
+        {
+            return "Hello SignalGo! " + DateTime.Now;
+        }
+
+        public async Task<string> CallClientService(string name, string family)
+        {
+            // call clients methods
+            foreach (ClientContext<IHelloCallbackClientService> item in OperationContext.Current.GetAllClientClientContextServices<IHelloCallbackClientService>())
+            {
+                await item.Service.ReceivedMessageAsync(name, family);
+            }
+            return name + " " + family;
         }
     }
 }

@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGoServerExample", "SignalGoServerExample\SignalGoServerExample.csproj", "{018B8BDF-C1CE-4137-845A-FCD47B3621C3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Shared", "..\..\..\Github\SignalGo-full-net\SignalGo.Shared\SignalGo.Shared.csproj", "{58C1722C-EF9E-4802-B567-09C972A49867}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Server", "..\..\..\Github\SignalGo-full-net\SignalGo.Server\SignalGo.Server.csproj", "{7BB98FBB-CEFC-4F7C-9BB0-B67E3069E5AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{018B8BDF-C1CE-4137-845A-FCD47B3621C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{018B8BDF-C1CE-4137-845A-FCD47B3621C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{018B8BDF-C1CE-4137-845A-FCD47B3621C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58C1722C-EF9E-4802-B567-09C972A49867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58C1722C-EF9E-4802-B567-09C972A49867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58C1722C-EF9E-4802-B567-09C972A49867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58C1722C-EF9E-4802-B567-09C972A49867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB98FBB-CEFC-4F7C-9BB0-B67E3069E5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB98FBB-CEFC-4F7C-9BB0-B67E3069E5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB98FBB-CEFC-4F7C-9BB0-B67E3069E5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB98FBB-CEFC-4F7C-9BB0-B67E3069E5AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

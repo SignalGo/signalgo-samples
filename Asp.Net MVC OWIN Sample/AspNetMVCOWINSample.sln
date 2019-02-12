@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMVCOWINSample", "AspNetMVCOWINSample\AspNetMVCOWINSample.csproj", "{003D1168-07FD-48EC-80ED-F613695F962E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Shared", "..\..\..\Github\SignalGo-full-net\SignalGo.Shared\SignalGo.Shared.csproj", "{89678A12-3D7B-4045-925B-2F4F047DF3CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Server", "..\..\..\Github\SignalGo-full-net\SignalGo.Server\SignalGo.Server.csproj", "{093FA6BD-C996-4684-8305-14D30574FA4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Server.Owin", "..\..\..\Github\SignalGo-full-net\SignalGo.Server.Owin\SignalGo.Server.Owin.csproj", "{99EFDAA7-5963-4654-9D12-A9B93D871B71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{003D1168-07FD-48EC-80ED-F613695F962E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003D1168-07FD-48EC-80ED-F613695F962E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003D1168-07FD-48EC-80ED-F613695F962E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89678A12-3D7B-4045-925B-2F4F047DF3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89678A12-3D7B-4045-925B-2F4F047DF3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89678A12-3D7B-4045-925B-2F4F047DF3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89678A12-3D7B-4045-925B-2F4F047DF3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093FA6BD-C996-4684-8305-14D30574FA4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093FA6BD-C996-4684-8305-14D30574FA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093FA6BD-C996-4684-8305-14D30574FA4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093FA6BD-C996-4684-8305-14D30574FA4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EFDAA7-5963-4654-9D12-A9B93D871B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EFDAA7-5963-4654-9D12-A9B93D871B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EFDAA7-5963-4654-9D12-A9B93D871B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EFDAA7-5963-4654-9D12-A9B93D871B71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

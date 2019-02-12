@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using SignalGo.Server.Owin;
 using SignalGo.Server.ServiceManager;
+using System;
 
 namespace AspNetCoreOWINSample
 {
@@ -26,16 +22,24 @@ namespace AspNetCoreOWINSample
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             //create your server provider
             ServerProvider serverProvider = new ServerProvider();
             //register your server service
             serverProvider.RegisterServerService<HelloWorldService>();
             //handle cross origin
             serverProvider.ProviderSetting.HttpSetting.HandleCrossOriginAccess = true;
-            //add signalgo middlleware
-            app.UseMiddleware<SignalGoHttpMiddleware>(serverProvider);
+            //serverProvider.Start("http://localhost:6235/any");
+            //websocket for duplex clients
+            WebSocketOptions webSocketOptions = new WebSocketOptions()
+            {
+                KeepAliveInterval = TimeSpan.FromSeconds(120),
+                ReceiveBufferSize = 4 * 1024
+            };
+            app.UseWebSockets(webSocketOptions);
 
+            //add signalgo middlleware
+            app.UseMiddleware<SignalGoNetCoreMiddleware>(serverProvider);
         }
     }
 }
