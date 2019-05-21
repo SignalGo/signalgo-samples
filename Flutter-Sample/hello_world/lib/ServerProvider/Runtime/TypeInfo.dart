@@ -12,6 +12,11 @@ class TypeInfo<T> {
   Type type;
 
   /// <summary>
+  /// type 2 of builder
+  /// </summary>
+  Type type2;
+
+  /// <summary>
   /// all of generic arguments
   /// </summary>
   List<TypeInfo> genericArguments = new List<TypeInfo>();
@@ -40,6 +45,7 @@ class TypeInfo<T> {
   ///list of methods
   /// </summary>
   Map<String, MethodInfo> methods = new Map<String, MethodInfo>();
+
   /// find method
   MethodInfo findMethod(String name) {
     return methods[name.toLowerCase()];

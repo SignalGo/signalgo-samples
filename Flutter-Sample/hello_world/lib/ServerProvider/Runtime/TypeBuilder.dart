@@ -121,11 +121,18 @@ class TypeBuilder<T> {
   /// build a type
   /// </summary>
   TypeInfo<T> build() {
+    if (getTypeFromcreateInstanceFunction != null) {
+      var result = _addType<T>(T);
+      result.type2 = getTypeFromcreateInstanceFunction().runtimeType;
+      return result;
+    }
+
+    return _addType<T>(T);
+  }
+
+  TypeInfo<T> _addType<T>(Type type) {
     TypeInfo<T> typeInfo = new TypeInfo<T>();
-    if (getTypeFromcreateInstanceFunction != null)
-      typeInfo.type = getTypeFromcreateInstanceFunction().runtimeType;
-    else
-      typeInfo.type = T;
+    typeInfo.type = type;
     typeInfo.createInstanceFunction = createInstanceFunction;
     typeInfo.getTypeFromcreateInstanceFunction = getTypeFromcreateInstance;
     typeInfo.properties = properties;

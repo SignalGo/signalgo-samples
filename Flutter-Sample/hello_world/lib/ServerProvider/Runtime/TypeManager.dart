@@ -32,7 +32,9 @@ class TypeManager {
     var result = compiledTypes[type];
     if (result == null) {
       for (var key in compiledTypes.keys) {
-        if (key.toString() == type.toString()) return compiledTypes[key];
+        if (compiledTypes[key].type2 == type) {
+          return compiledTypes[key];
+        }
       }
     }
     return result;

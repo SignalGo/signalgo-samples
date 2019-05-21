@@ -3,6 +3,8 @@ import 'package:hello_world/ServerProvider/CallbackServices/HelloCallbackClientS
 import 'package:hello_world/ServerProvider/HelloCallbackClientServiceCallbackService.dart';
 import 'package:hello_world/ServerProvider/JsonInitializer.dart';
 import 'package:hello_world/ServerProvider/PostJsonToServerService.dart';
+import 'package:hello_world/ServerProvider/Runtime/TypeManager.dart';
+import 'package:hello_world/ServerProvider/ServerProviderImports.dart';
 import 'package:hello_world/ServerProvider/SignalGo/ClientProvider.dart';
 import 'package:hello_world/ServerProvider/helloworldService.dart';
 
@@ -13,11 +15,13 @@ void main() {
 
 ClientProvider provider = new ClientProvider();
 
-String host = "192.168.8.102";
+String host = "10.0.2.2";
 int port = 9674;
+
 void initializeSignalGo() {
   try {
     JsonInitializer.initialize();
+    
     PostJsonToServerService.initialize(provider);
     provider.registerService<HelloCallbackClientServiceCallbackService>(
         HelloCallbackClientServiceCallbackServiceBase.name);
