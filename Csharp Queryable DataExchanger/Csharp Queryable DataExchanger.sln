@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp Queryable DataExchanger", "Csharp Queryable DataExchanger\Csharp Queryable DataExchanger.csproj", "{D538AA28-4AA6-4C22-91A6-5F5B81FADD8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Shared", "..\..\..\Github\SignalGo-full-net\SignalGo.Shared\SignalGo.Shared.csproj", "{EB11B66C-4877-4124-940A-DAD08A340133}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.DataExchanger", "..\..\..\Github\SignalGo-full-net\SignalGo.DataExchanger\SignalGo.DataExchanger.csproj", "{C2DA4BA9-391A-4CAB-8A89-54E6D9B3E5B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalGo.Server", "..\..\..\Github\SignalGo-full-net\SignalGo.Server\SignalGo.Server.csproj", "{DA2190DF-000A-41A2-B669-432FA8FCEF4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D538AA28-4AA6-4C22-91A6-5F5B81FADD8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D538AA28-4AA6-4C22-91A6-5F5B81FADD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D538AA28-4AA6-4C22-91A6-5F5B81FADD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D538AA28-4AA6-4C22-91A6-5F5B81FADD8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB11B66C-4877-4124-940A-DAD08A340133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB11B66C-4877-4124-940A-DAD08A340133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB11B66C-4877-4124-940A-DAD08A340133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB11B66C-4877-4124-940A-DAD08A340133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2DA4BA9-391A-4CAB-8A89-54E6D9B3E5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2DA4BA9-391A-4CAB-8A89-54E6D9B3E5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2DA4BA9-391A-4CAB-8A89-54E6D9B3E5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2DA4BA9-391A-4CAB-8A89-54E6D9B3E5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA2190DF-000A-41A2-B669-432FA8FCEF4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA2190DF-000A-41A2-B669-432FA8FCEF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA2190DF-000A-41A2-B669-432FA8FCEF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA2190DF-000A-41A2-B669-432FA8FCEF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEB643F5-0C65-458A-AD65-527DB3DC1D40}
+	EndGlobalSection
+EndGlobal

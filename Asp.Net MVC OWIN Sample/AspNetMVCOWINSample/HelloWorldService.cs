@@ -9,6 +9,16 @@ namespace AspNetMVCOWINSample
     [ServiceContract("HelloWorld", ServiceType.ServerService, InstanceType.SingleInstance)]
     public class HelloWorldService
     {
+        /// <summary>
+        /// simple method test
+        /// </summary>
+        /// <param name="yourName"></param>
+        /// <returns></returns>
+        public string Login(string yourName)
+        {
+            return $"Hello {yourName} welcome to signalgo...";
+        }
+
         public string Hello()
         {
             return "Hello SignalGo! " + DateTime.Now;

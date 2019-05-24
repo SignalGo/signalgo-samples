@@ -27,6 +27,8 @@ namespace AspNetCoreOWINSample
             ServerProvider serverProvider = new ServerProvider();
             //register your server service
             serverProvider.RegisterServerService<HelloWorldService>();
+            serverProvider.RegisterServerService<TestStreamService>();
+            serverProvider.RegisterClientService<IHelloCallbackClientService>();
             //handle cross origin
             serverProvider.ProviderSetting.HttpSetting.HandleCrossOriginAccess = true;
             //serverProvider.Start("http://localhost:6235/any");

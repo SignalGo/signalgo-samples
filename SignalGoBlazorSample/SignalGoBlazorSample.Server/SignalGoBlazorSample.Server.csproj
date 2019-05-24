@@ -10,8 +10,7 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.1" />
-    <PackageReference Include="SignalGo.Net.Server" Version="5.4.0" />
-    <PackageReference Include="SignalGo.Server.Owin" Version="5.3.0" />
+    <PackageReference Include="SignalGo.Server.Owin" Version="5.5.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SignalGoBlazorSample.Client\SignalGoBlazorSample.Client.csproj" />

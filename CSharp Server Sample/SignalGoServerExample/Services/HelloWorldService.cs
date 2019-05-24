@@ -22,6 +22,17 @@ namespace SignalGoServerExample.Services
             return $"Hello {yourName} welcome to signalgo...";
         }
 
+        private bool PrivateMethod()
+        {
+            return true;
+        }
+
+        public async Task<string> LoginTimmeMethod()
+        {
+            await Task.Delay(1000 * 60);
+            return await Task.FromResult("this is long time result");
+        }
+
         /// <summary>
         /// test to get complex object
         /// </summary>
