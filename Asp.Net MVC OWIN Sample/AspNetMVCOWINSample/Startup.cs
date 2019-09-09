@@ -15,6 +15,8 @@ namespace AspNetMVCOWINSample
             ServerProvider serverProvider = new ServerProvider();
             //register your server service
             serverProvider.RegisterServerService<HelloWorldService>();
+            //register client service
+            serverProvider.RegisterClientService<IHelloCallbackClientService>();
             //handle cross origin
             serverProvider.ProviderSetting.HttpSetting.HandleCrossOriginAccess = true;
             //add signalgo middlleware

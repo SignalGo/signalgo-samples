@@ -37,13 +37,13 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SignalGo.Server, Version=5.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SignalGo.Net.Server.5.5.2\lib\net45\SignalGo.Server.dll</HintPath>
+      <HintPath>..\packages\SignalGo.Net.Server.5.5.3\lib\net45\SignalGo.Server.dll</HintPath>
     </Reference>
     <Reference Include="SignalGo.Server.TelegramBot, Version=5.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SignalGo.Server.TelegramBot.5.5.2\lib\netstandard2.0\SignalGo.Server.TelegramBot.dll</HintPath>
     </Reference>
     <Reference Include="SignalGo.Shared, Version=5.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SignalGo.Net.Shared.5.5.2\lib\net45\SignalGo.Shared.dll</HintPath>
+      <HintPath>..\packages\SignalGo.Net.Shared.5.5.3\lib\net45\SignalGo.Shared.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

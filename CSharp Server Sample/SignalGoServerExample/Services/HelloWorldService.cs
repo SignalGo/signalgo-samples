@@ -22,14 +22,9 @@ namespace SignalGoServerExample.Services
             return $"Hello {yourName} welcome to signalgo...";
         }
 
-        private bool PrivateMethod()
+        public async Task<string> LoginTimeMethod()
         {
-            return true;
-        }
-
-        public async Task<string> LoginTimmeMethod()
-        {
-            await Task.Delay(1000 * 60);
+            await Task.Delay(1000 * 5);
             return await Task.FromResult("this is long time result");
         }
 
@@ -95,7 +90,8 @@ namespace SignalGoServerExample.Services
             // call clients methods
             foreach (ClientContext<IHelloCallbackClientService> item in OperationContext.Current.GetAllClientClientContextServices<IHelloCallbackClientService>())
             {
-                await item.Service.ReceivedMessageAsync(name, family);
+                if (item.Client.ProtocolType == ClientProtocolType.WebSocket || item.Client.ProtocolType == ClientProtocolType.SignalGoDuplex)
+                    await item.Service.ReceivedMessageAsync(name, family);
             }
             return name + " " + family;
         }
