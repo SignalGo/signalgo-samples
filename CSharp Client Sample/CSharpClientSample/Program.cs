@@ -83,5 +83,10 @@ namespace CSharpClientSample
         {
             Console.WriteLine($"callback called name:{name} family:{family}");
         }
+
+        public void ReceivedMessageBase(string name, string family)
+        {
+            Console.WriteLine($"callback called base name:{name} family:{family}");
+        }
     }
 }

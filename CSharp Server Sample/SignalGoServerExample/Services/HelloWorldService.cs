@@ -91,7 +91,10 @@ namespace SignalGoServerExample.Services
             foreach (ClientContext<IHelloCallbackClientService> item in OperationContext.Current.GetAllClientClientContextServices<IHelloCallbackClientService>())
             {
                 if (item.Client.ProtocolType == ClientProtocolType.WebSocket || item.Client.ProtocolType == ClientProtocolType.SignalGoDuplex)
+                {
                     await item.Service.ReceivedMessageAsync(name, family);
+                    await item.Service.ReceivedMessageBaseAsync(name, family);
+                }
             }
             return name + " " + family;
         }

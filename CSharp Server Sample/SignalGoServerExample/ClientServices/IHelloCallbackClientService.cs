@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SignalGoServerExample.ClientServices
 {
     [ServiceContract("HelloCallback", ServiceType.ClientService, InstanceType.SingleInstance)]
-    public interface IHelloCallbackClientService
+    public interface IHelloCallbackClientService : IHelloCallbackClientServiceBase
     {
         Task ReceivedMessageAsync(string name, string family);
     }
