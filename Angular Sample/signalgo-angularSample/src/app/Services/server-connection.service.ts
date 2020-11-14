@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Type } from '@angular/compiler/src/core';
 import { Extractor } from 'node_modules/@angular/compiler';
+import { Observable } from 'rxjs';
 //import * as moment from 'jalali-moment';
 @Injectable({
   providedIn: 'root'
@@ -127,7 +128,7 @@ export class ServerConnectionService {
     });
   }
 
-  post<T>(url: string, data: any): Promise<T> {
+  post<T>(url: string, data: any): Observable<T> {
     var dateParser = function (key, value) {
       if (typeof value === 'string') {
         var date = Date.parse(value);
@@ -151,23 +152,39 @@ export class ServerConnectionService {
     catch (ex) {
       console.log("url:" + url + " serializeReferences error:", ex);
     }
-    return new Promise<T>((resolve, reject) => {
+    return new Observable<T>((observer) => {
 
-      this.http.post(environment.serverUrl + url, data, { withCredentials: true }).subscribe((response: any) => {
+      return this.http.post(environment.serverUrl + url, data, { withCredentials: true }).subscribe((response: any) => {
         try {
           var json = JSON.stringify(response);
           var result = JSON.parse(json, dateParser);
           result = this.deserializeReferences(result, {}, []);
 
-          resolve(result);
+          observer.next(result);
         } catch (ex) {
           console.log("fix reference error:", ex);
         }
       }, (error) => {
         console.log("error response: ", error);
-        reject(error);
+        observer.error(error);
       });
     });
+  }
+
+  toCamelCase(o: any) {
+    var origKey, newKey, value;
+    if (o instanceof Array) {
+      return o;
+    } else {
+      for (origKey in o) {
+        if (o.hasOwnProperty(origKey)) {
+          newKey = (origKey.charAt(0).toLowerCase() + origKey.slice(1) || origKey).toString()
+          value = o[origKey]
+          o[newKey] = value;
+          delete o[origKey];
+        }
+      }
+    }
   }
 
   public clone(obj: any): any {
@@ -207,6 +224,9 @@ export class ServerConnectionService {
         ids[obj.$id] = obj;
       delete obj.$id;
     }
+
+    this.toCamelCase(obj);
+
     if (obj.$ref) {
       var ref = obj.$ref;
       obj = ids[obj.$ref];
